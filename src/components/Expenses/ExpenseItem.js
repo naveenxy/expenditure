@@ -6,21 +6,23 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
-  const clickHandler = () => {
-    console.log(title)
-    setTitle("Updated!");
+  // const clickHandler = () => {
+  //   console.log(title)
+  //   setTitle("Updated!");
 
-    console.log("Clicked!");
-  };
+  //   console.log("Clicked!");
+  // };
   return (
+    <li>
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
         <h2>{title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
+      {/* <button onClick={clickHandler}>Change Title</button> */}
     </Card>
+    </li>
   );
 };
 

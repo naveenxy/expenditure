@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpenses';
@@ -32,11 +32,18 @@ const App = () => {
   //   React.createElement('h2', {}, "Let's get started!"),
   //   React.createElement(Expenses, { items: expenses })
   // );
-
+  const [expense,setExpense] =useState([])
+const addExpenseHandler = item =>{
+  // console.log("From App.js")
+ // console.log(expense)
+setExpense(current=>[...current,item])
+  
+}
+//console.log(expense)
   return (
     <div>
-      <NewExpense/>
-      <Expenses items={expenses} />
+      <NewExpense onAddExpense ={addExpenseHandler}/>
+      <Expenses items={expense} />
     </div>
   );
 }
